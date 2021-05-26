@@ -3,20 +3,26 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "jest": {
+    "setupTestFrameworkScriptFile": "./tests/setup.js"
+  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js --ignore tests",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "test": "jest",
+    "testdev": "NODE_ENV=dev jest",
+    "testci": "NODE_ENV=ci jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.188.0",
     "body-parser": "^1.17.2",
-    "concurrently": "^3.5.0",
+    "concurrently": "^6.1.0",
     "cookie-session": "^2.0.0-beta.2",
     "express": "^4.15.3",
     "jest": "^22.1.4",
