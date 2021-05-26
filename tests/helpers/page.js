@@ -11,9 +11,7 @@ class CustomPage {
     if (['ci'].includes(process.env.NODE_ENV)) {
       options['args'] = [keys.args];
     }
-    const browser = await puppeteer.launch({
-      headless: false
-    })
+    const browser = await puppeteer.launch(options)
     const page = await browser.newPage();
     const customPage = new CustomPage(page);
 
