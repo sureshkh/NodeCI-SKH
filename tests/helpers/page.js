@@ -8,7 +8,7 @@ class CustomPage {
     const options = {
       headless: keys.headLess
     };
-    if (['dev'].includes(process.env.NODE_ENV)) {
+    if (['ci'].includes(process.env.NODE_ENV)) {
       options['args'] = [keys.args];
     }
     const browser = await puppeteer.launch({
