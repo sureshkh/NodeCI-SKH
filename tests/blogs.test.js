@@ -9,7 +9,7 @@ beforeEach(async () => {
 afterEach(async () => {
   await page.close();
 });
-/*
+
 describe('When Logged In', async () =>{
   beforeEach(async () => {
     await page.login();
@@ -56,7 +56,7 @@ describe('When Logged In', async () =>{
     });
   });
 });
-*/
+
 
 describe('User is not logged In', async () => {
   test('User can not create Blog Post', async () => {
